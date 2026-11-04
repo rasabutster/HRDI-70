@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ภาพรวม 3 โครงการดิจิทัล สวพส. ปี 2570</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts: Prompt & Sarabun -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        prompt: ['Prompt', 'sans-serif'],
+                        sarabun: ['Sarabun', 'sans-serif'],
+                    },
+                    colors: {
+                        hrdi: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#16a34a',
+                            600: '#15803d',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            navy: '#0f172a',
+                            teal: '#0d9488'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f8fafc;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Prompt', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .hero-title-wrap {
+            container-type: inline-size;
+        }
+        .hero-title {
+            font-size: min(1.25rem, 1.8cqi);
+            white-space: nowrap;
+            line-height: 1.45;
+        }
+        @container (max-width: 640px) {
+            .hero-title {
+                font-size: 1.05rem;
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-800 bg-slate-50 min-h-screen pb-12">
+
+    <!-- Top Navigation / Banner -->
+    <header class="bg-gradient-to-r from-slate-900 via-hrdi-800 to-teal-900 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div class="hero-title-wrap min-w-0 flex-1">
+                    <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs font-semibold rounded-full border border-emerald-400/30 mb-2">
+                        แผนงานดิจิทัลองค์กร สวพส. ปีงบประมาณ 2570
+                    </span>
+                    <h1 class="hero-title font-bold text-white tracking-tight">
+                        ภาพรวม 3 โครงการดิจิทัลเพื่อขับเคลื่อนการพัฒนาพื้นที่สูง
+                    </h1>
+                    <p class="text-slate-300 text-xs mt-3 flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                        สถาบันวิจัยและพัฒนาพื้นที่สูง (องค์การมหาชน) - HRDI
+                    </p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl px-4 py-3 border border-white/10 text-right shrink-0 self-stretch md:self-auto flex flex-col items-end justify-center">
+                    <span class="text-xs text-slate-300">งบประมาณ 3 โครงการ</span>
+                    <span class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-heading leading-none mt-1 whitespace-nowrap">2.7512</span>
+                    <span class="text-sm text-slate-200 leading-none mt-0.5 whitespace-nowrap">ล้านบาท</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-8">
+
+        <section id="overview" class="scroll-mt-6">
+            <div class="flex items-end justify-between gap-3 mb-4">
+                <h2 class="text-xl font-bold text-slate-900 font-heading flex items-center gap-2">
+                    <i class="fa-solid fa-table-cells-large text-emerald-600"></i> เลือกดูโครงการ
+                </h2>
+                <p class="text-xs text-slate-500">คลิกการ์ดเพื่อไปยังรายละเอียด</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <a href="#project-digital" class="group bg-white rounded-2xl p-5 shadow-sm border border-slate-200 hover:border-emerald-400 hover:shadow-md transition-all flex flex-col min-h-[220px]">
+                    <div class="flex items-center justify-between gap-3">
+                        <span class="text-xs font-heading font-semibold text-emerald-700 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">01 · งบดำเนินงาน</span>
+                        <i class="fa-solid fa-arrow-right text-slate-300 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-slate-900 mt-4 leading-snug">โครงการพัฒนาระบบดิจิทัลเพื่อรองรับการบริหารงานและบริการพื้นที่สูง</h3>
+                    <p class="text-3xl font-extrabold text-emerald-600 font-heading mt-auto pt-4">1.7712 <span class="text-sm font-normal text-slate-500">ล้านบาท</span></p>
+                    <p class="text-xs text-slate-500 mt-1">HRDI One, มาตรฐานไซเบอร์ และเว็บแอปพลิเคชัน</p>
+                </a>
+                <a href="#project-chatbot" class="group bg-white rounded-2xl p-5 shadow-sm border border-slate-200 hover:border-violet-400 hover:shadow-md transition-all flex flex-col min-h-[220px]">
+                    <div class="flex items-center justify-between gap-3">
+                        <span class="text-xs font-heading font-semibold text-violet-700 bg-violet-50 border border-violet-100 px-2.5 py-1 rounded-full">02 · งบดำเนินงาน</span>
+                        <i class="fa-solid fa-arrow-right text-slate-300 group-hover:text-violet-600 group-hover:translate-x-0.5 transition-all"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-slate-900 mt-4 leading-snug">โครงการพัฒนา AI Chatbot เพื่อการถ่ายทอดองค์ความรู้และบริการข้อมูล</h3>
+                    <p class="text-3xl font-extrabold text-violet-600 font-heading mt-auto pt-4">0.55 <span class="text-sm font-normal text-slate-500">ล้านบาท</span></p>
+                    <p class="text-xs text-slate-500 mt-1">ความพึงพอใจผู้ใช้บริการ 85% และอบรม 2 ครั้ง</p>
+                </a>
+                <a href="#project-capital" class="group bg-white rounded-2xl p-5 shadow-sm border border-slate-200 hover:border-amber-400 hover:shadow-md transition-all flex flex-col min-h-[220px]">
+                    <div class="flex items-center justify-between gap-3">
+                        <span class="text-xs font-heading font-semibold text-amber-800 bg-amber-50 border border-amber-100 px-2.5 py-1 rounded-full">03 · งบลงทุน</span>
+                        <i class="fa-solid fa-arrow-right text-slate-300 group-hover:text-amber-600 group-hover:translate-x-0.5 transition-all"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-slate-900 mt-4 leading-snug">โครงการครุภัณฑ์สนับสนุนการพัฒนาเทคโนโลยีดิจิทัลเพื่อขับเคลื่อนการพัฒนาพื้นที่สูง</h3>
+                    <p class="text-3xl font-extrabold text-amber-600 font-heading mt-auto pt-4">0.43 <span class="text-sm font-normal text-slate-500">ล้านบาท</span></p>
+                    <p class="text-xs text-slate-500 mt-1">API, Data Connector, AI-Integrated และ MFA ด้วย ThaiD</p>
+                </a>
+            </div>
+        </section>
+
+        <div id="project-digital" class="scroll-mt-6 rounded-2xl bg-gradient-to-r from-emerald-700 to-teal-700 text-white px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+                <p class="text-xs font-heading text-emerald-100">โครงการที่ 1 · งบดำเนินงาน</p>
+                <h2 class="font-heading font-bold text-lg sm:text-xl mt-1">โครงการพัฒนาระบบดิจิทัลเพื่อรองรับการบริหารงานและบริการพื้นที่สูง</h2>
+            </div>
+            <div class="flex items-center gap-4 shrink-0">
+                <div class="text-right">
+                    <p class="text-2xl font-extrabold font-heading leading-none">1.7712</p>
+                    <p class="text-xs text-emerald-100 mt-1">ล้านบาท</p>
+                </div>
+                <a href="#overview" class="text-xs bg-white/15 hover:bg-white/25 border border-white/20 rounded-full px-3 py-1.5">กลับไปภาพรวม</a>
+            </div>
+        </div>
+
+        <!-- Executive Summary & Framework Standard -->
+        <section class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200/80 bg-white">
+            <div class="flex items-start gap-4">
+                <div class="p-3 bg-emerald-100 text-emerald-700 rounded-xl hidden sm:block">
+                    <i class="fa-solid fa-scale-balanced text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-lg sm:text-xl font-bold text-slate-900 font-heading flex items-center gap-2">
+                        <i class="fa-solid fa-scale-balanced text-emerald-600 sm:hidden"></i>
+                        วัตถุประสงค์และกรอบการดำเนินงาน (รักษางานเดิม & ยกระดับองค์กร)
+                    </h2>
+                    <p class="mt-2 text-slate-600 leading-relaxed text-sm sm:text-base">
+                        มุ่งยกระดับการทำงานของ สวพส. ให้มีความโปร่งใส มีประสิทธิภาพ และสอดคล้องกับกรอบกฎหมาย นโยบายดิจิทัลแห่งชาติ
+                        <strong>พ.ร.บ.การรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562</strong> และ 
+                        <strong>พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA)</strong>
+                        รวมถึงอัปเกรด PHP เป็นเวอร์ชัน <strong>8.5.12</strong> ซึ่งเป็นรุ่นล่าสุดที่ปิดช่องโหว่ <strong>PHP2Shell</strong>
+                        (CVE-2026-109618 และ CVE-2026-109619)
+                        เพื่อเตรียมความพร้อมรองรับการเปลี่ยนแปลงและการต่อยอดด้วยเทคโนโลยีในอนาคต
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Cards -->
+        <section>
+            <h2 class="text-xl font-bold text-slate-900 mb-4 font-heading flex items-center gap-2">
+                <i class="fa-solid fa-chart-line text-emerald-600"></i> ตัวชี้วัดหลักของโครงการ (KPIs)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- KPI 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-emerald-500 text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md shadow-emerald-200 mb-4">
+                            01
+                        </div>
+                        <h3 class="font-heading font-semibold text-slate-800 text-lg">ระบบศูนย์กลางการสื่อสาร HRDI One</h3>
+                        <p class="text-3xl font-extrabold text-emerald-600 mt-2 font-heading">1 <span class="text-base font-normal text-slate-500">ระบบ</span></p>
+                        <p class="text-slate-500 text-sm mt-2">ศูนย์รวมข้อมูล พอร์ทัลหลัก และเชื่อมโยงระบบงานภายในทั้งหมด</p>
+                    </div>
+                </div>
+
+                <!-- KPI 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md shadow-blue-200 mb-4">
+                            02
+                        </div>
+                        <h3 class="font-heading font-semibold text-slate-800 text-lg">มาตรฐาน พ.ร.บ. ไซเบอร์ & PDPA</h3>
+                        <p class="text-3xl font-extrabold text-blue-600 mt-2 font-heading">2 <span class="text-base font-normal text-slate-500">ระบบ</span></p>
+                        <p class="text-slate-500 text-sm mt-2">อัปเกรด PHP เป็น 8.5.12 ปิดช่องโหว่ PHP2Shell ป้องกัน Brute Force และรองรับ MFA</p>
+                    </div>
+                </div>
+
+                <!-- KPI 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-purple-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-purple-600 text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md shadow-purple-200 mb-4">
+                            03
+                        </div>
+                        <h3 class="font-heading font-semibold text-slate-800 text-lg">เว็บแอปพลิเคชันสนับสนุนข้อมูล</h3>
+                        <p class="text-3xl font-extrabold text-purple-600 mt-2 font-heading">2 <span class="text-base font-normal text-slate-500">เว็บไซต์</span></p>
+                        <p class="text-slate-500 text-sm mt-2">ปรับปรุง Stock Photos และ E-Ticket พร้อมอัปเกรด PHP เป็น 8.5.12 ที่ปลอดภัยจากช่องโหว่ PHP2Shell</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Budget & Project Breakdown Overview -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left 2 Cols: Item Details -->
+            <div class="lg:col-span-2 space-y-6">
+                
+                <!-- Item 1: HRDI One -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 px-6 py-4 text-white flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-cubes text-xl"></i>
+                            <h3 class="font-heading font-bold text-lg">1. พัฒนาระบบศูนย์กลาง HRDI One</h3>
+                        </div>
+                        <span class="bg-white/20 text-white font-heading font-bold text-sm px-3 py-1 rounded-full backdrop-blur-sm">
+                            0.50 ล้านบาท
+                        </span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-100 text-sm sm:text-base leading-relaxed">
+                            <strong>HRDI One:</strong> ระบบศูนย์กลางการเข้าถึงข้อมูลและบริการภายในองค์กร เชื่อมโยงระบบเดิมให้อยู่ในจุดเดียว 
+                            เป็น Profile หลักของบุคลากร เพื่อจัดการและตรวจสอบข้อมูลส่วนบุคคลโดยไม่กระทบระบบเดิม
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                            <div class="border border-slate-100 rounded-xl p-4 bg-emerald-50/30">
+                                <h4 class="font-heading font-semibold text-emerald-800 text-sm mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-check-circle text-emerald-600"></i> คุณสมบัติหลัก Phase 1
+                                </h4>
+                                <ul class="text-xs sm:text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                                    <li>เชื่อมโยงข้อมูลระบบเดิม + ศูนย์กลางข่าวสาร</li>
+                                    <li> Profile บุคลากร (ลงเวลา, ลา, สวัสดิการ)</li>
+                                    <li>รวมแบบฟอร์ม เอกสารสำคัญ และลิงก์บริการ</li>
+                                    <li><strong>เตรียมแทนที่ HRM เดิม</strong></li>
+                                    <li>Login ผ่านระบบ <strong>ThaiD</strong></li>
+                                    <li> Flow SSO ดึงข้อมูล บังคับระบุ ตำแหน่ง/กลุ่มงาน/สำนัก</li>
+                                    <li>ระบบ PaySlip</li>
+                                    <li>ดึงประวัติสวัสดิการ & สัญญา Finance</li>
+                                    <li><strong>ปรับปรุง QR Code:</strong> เพิ่ม Logo ตรงกลาง + Short link</li>
+                                </ul>
+                            </div>
+
+                            <div class="border border-slate-100 rounded-xl p-4 bg-slate-50">
+                                <h4 class="font-heading font-semibold text-slate-800 text-sm mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-arrows-split-up-and-left text-slate-600"></i> แผนงาน Phase ถัดไป
+                                </h4>
+                                <ul class="text-xs sm:text-sm text-slate-600 space-y-2">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-angle-right text-emerald-500 mt-1"></i>
+                                        <span>ปรับปรุงระบบ SSO ที่แท้จริง (Full SSO Integration)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-angle-right text-emerald-500 mt-1"></i>
+                                        <span>กำหนดสิทธิ์การเข้าถึงระบบงานตาม Role บุคลากร</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-angle-right text-emerald-500 mt-1"></i>
+                                        <span>ระบบคำขอสวัสดิการ (Welfare Request) ยื่นจาก HRDI One และพิมพ์เอกสารออกระบบได้</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Cybersecurity (2 Systems) -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-700 to-indigo-700 px-6 py-4 text-white flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-shield-virus text-xl"></i>
+                            <h3 class="font-heading font-bold text-lg">2. ปรับปรุงระบบตาม พ.ร.บ. ไซเบอร์</h3>
+                        </div>
+                        <span class="bg-white/20 text-white font-heading font-bold text-sm px-3 py-1 rounded-full backdrop-blur-sm">
+                            0.40 ล้านบาท
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-slate-600 mb-4">
+                            ยกระดับความปลอดภัยของระบบงานภายใน จำนวน 2 ระบบหลัก โดยอัปเกรด PHP เป็น 8.5.12 ซึ่งเป็นเวอร์ชันล่าสุดที่ปิดช่องโหว่ PHP2Shell พร้อม MFA และป้องกัน Brute Force
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="p-3.5 border border-slate-200 rounded-xl bg-slate-50 flex items-start gap-3">
+                                <div class="p-2 bg-blue-100 text-blue-600 rounded-lg shrink-0">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-semibold text-sm text-slate-800">2.1 ระบบคำขอตั้งงบประมาณ</h4>
+                                    <p class="text-xs text-slate-500 mt-1">อัปเกรด PHP 8.5.12 ปิดช่องโหว่ PHP2Shell, MFA, ป้องกัน Brute Force Login</p>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 border border-slate-200 rounded-xl bg-slate-50 flex items-start gap-3">
+                                <div class="p-2 bg-blue-100 text-blue-600 rounded-lg shrink-0">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-semibold text-sm text-slate-800">2.2 ระบบติดตามผลการดำเนินงาน (ERP เดิม)</h4>
+                                    <p class="text-xs text-slate-500 mt-1">อัปเกรด PHP 8.5.12 ปิดช่องโหว่ PHP2Shell, MFA, ป้องกัน Brute Force Login</p>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 border border-slate-200 rounded-xl bg-slate-50 flex items-start gap-3">
+                                <div class="p-2 bg-slate-200 text-slate-600 rounded-lg shrink-0">
+                                    <i class="fa-solid fa-users-gear"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-semibold text-sm text-slate-800">2.3 ระบบ HRM</h4>
+                                    <p class="text-xs text-slate-500 mt-1">ปรับปรุงตาม Requirement, MFA, Brute Force</p>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 border border-slate-200 rounded-xl bg-slate-50 flex items-start gap-3">
+                                <div class="p-2 bg-slate-200 text-slate-600 rounded-lg shrink-0">
+                                    <i class="fa-solid fa-coins"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-semibold text-sm text-slate-800">2.4 ระบบ Finance</h4>
+                                    <p class="text-xs text-slate-500 mt-1">อัปเกรด PHP 8.5.12 ปิดช่องโหว่ PHP2Shell, MFA, ป้องกัน Brute Force Login</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Apps & Maintenance & Hardware -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Item 3: Web Application Upgrades -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="p-2 bg-purple-100 text-purple-700 rounded-lg">
+                                    <i class="fa-solid fa-laptop-code text-lg"></i>
+                                </span>
+                                <span class="bg-purple-50 text-purple-700 text-xs font-bold font-heading px-2.5 py-1 rounded-full border border-purple-200">
+                                    0.20 ล้านบาท
+                                </span>
+                            </div>
+                            <h3 class="font-heading font-bold text-slate-800 mb-2">3. ปรับปรุงเว็บแอปพลิเคชัน (2 เว็บ)</h3>
+                            <p class="text-xs text-slate-500 mb-3">ปรับตาม พ.ร.บ. ไซเบอร์/PDPA, อัปเกรด PHP เป็น 8.5.12 เพื่อปิดช่องโหว่ PHP2Shell, MFA</p>
+                            
+                            <ul class="text-xs text-slate-600 space-y-2">
+                                <li class="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                                    <strong class="text-purple-900 block font-heading">3.1 Stock Photos</strong>
+                                    <span>เพิ่มลายน้ำ, บันทึกประวัติการดาวน์โหลด, ปรับระบบอัปโหลด, สถิติรูปยอดนิยม, Login ด้วย Active Directory (AD)</span>
+                                </li>
+                                <li class="bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                                    <strong class="text-purple-900 block font-heading">3.2 E-Ticket</strong>
+                                    <span>อัปเกรดความปลอดภัยตามมาตรฐาน (อยู่ระหว่างสรุป Requirement)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 4, 5, 6: MA & Hardware & Staff -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-toolbox text-amber-500"></i> งานดูแลบำรุงรักษา & บุคลากร
+                            </h3>
+                            
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-xs pb-2 border-b border-slate-100">
+                                    <div>
+                                        <span class="font-semibold text-slate-700 block font-heading">4. MA ระบบเดิม (2 ระบบ)</span>
+                                        <span class="text-slate-500">ระบบ e-Document, IDP</span>
+                                    </div>
+                                    <span class="font-heading font-bold text-slate-800">0.3800 ลบ.</span>
+                                </div>
+
+                                <div class="flex justify-between items-center text-xs pb-2 border-b border-slate-100">
+                                    <div>
+                                        <span class="font-semibold text-slate-700 block font-heading">5. วัสดุคอมพิวเตอร์</span>
+                                        <span class="text-slate-500">อุปกรณ์และวัสดุสนับสนุน</span>
+                                    </div>
+                                    <span class="font-heading font-bold text-slate-800">0.0500 ลบ.</span>
+                                </div>
+
+                                <div class="flex justify-between items-center text-xs">
+                                    <div>
+                                        <span class="font-semibold text-slate-700 block font-heading">6. จ้างเจ้าหน้าที่โครงการ</span>
+                                        <span class="text-slate-500">จำนวน 1 อัตรา</span>
+                                    </div>
+                                    <span class="font-heading font-bold text-slate-800">0.2412 ลบ.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-amber-600 text-sm"></i>
+                            <span>ช่วยให้การบริหารจัดการและการสนับสนุนงานเทคโนโลยีเป็นไปอย่างต่อเนื่อง</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right 1 Col: Visual Chart & Summary Table -->
+            <div class="space-y-6">
+                <!-- Chart Card -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <h3 class="font-heading font-bold text-slate-800 text-base mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie text-teal-600"></i> สัดส่วนงบประมาณโครงการ
+                    </h3>
+                    <div class="relative h-64 w-full flex items-center justify-center">
+                        <canvas id="budgetChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-xs text-slate-500">งบประมาณรวมทั้งสิ้น <strong class="text-slate-800 font-heading">1.7712 ล้านบาท</strong></p>
+                    </div>
+                </div>
+
+                <!-- Budget Breakdown Table -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <h3 class="font-heading font-bold text-slate-800 text-base mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-indigo-600"></i> สรุปรายการงบประมาณ
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-200 text-slate-500 font-heading">
+                                    <th class="py-2">รายการ</th>
+                                    <th class="py-2 text-right">งบประมาณ (ลบ.)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100 text-slate-700">
+                                <tr>
+                                    <td class="py-2">1. ระบบ HRDI One</td>
+                                    <td class="py-2 text-right font-medium">0.5000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">2. ปรับปรุงตาม พ.ร.บ. ไซเบอร์</td>
+                                    <td class="py-2 text-right font-medium">0.4000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">3. ปรับปรุงเว็บแอปพลิเคชัน</td>
+                                    <td class="py-2 text-right font-medium">0.2000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">4. MA ระบบเดิม</td>
+                                    <td class="py-2 text-right font-medium">0.3800</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">5. วัสดุคอมพิวเตอร์</td>
+                                    <td class="py-2 text-right font-medium">0.0500</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">6. เจ้าหน้าที่โครงการ (1 อัตรา)</td>
+                                    <td class="py-2 text-right font-medium">0.2412</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="border-t-2 border-slate-800 font-heading text-slate-900 font-bold">
+                                    <td class="pt-2">รวมทั้งหมด</td>
+                                    <td class="pt-2 text-right text-emerald-600">1.7712</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Strategic Alignment Card -->
+                <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white shadow-md">
+                    <h4 class="font-heading font-bold text-sm text-emerald-400 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-bullseye"></i> เป้าหมายเชิงยุทธศาสตร์
+                    </h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        พัฒนาระบบเทคโนโลยีดิจิทัลของ สวพส. ให้มีความปลอดภัย ได้มาตรฐานสากล รองรับการใช้งานของบุคลากรได้อย่างมีประสิทธิภาพ พร้อมต่อยอดสถาปัตยกรรมสู่ยุคดิจิทัลเต็มรูปแบบ
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Annual work plan FY 2570 -->
+        <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3 mb-5">
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900 font-heading flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check text-emerald-600"></i> แผนการปฏิบัติงาน ปีงบประมาณ 2570
+                    </h2>
+                    <p class="text-sm text-slate-500 mt-1 leading-relaxed">
+                        ตามแผนการปฏิบัติการประจำปี 2570 สำนักยุทธศาสตร์และแผน
+                        ภายใต้ยุทธศาสตร์ด้านการสร้างโอกาสและความเสมอภาคทางสังคม
+                        ระยะเวลา ตุลาคม 2569 – กันยายน 2570
+                    </p>
+                </div>
+                <p class="text-xs text-slate-500 shrink-0">วงเงินทั้งปี <strong class="text-slate-800 font-heading">1,771,200 บาท</strong></p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+                <div class="rounded-xl border border-cyan-100 bg-cyan-50/60 p-4">
+                    <p class="text-xs font-heading font-semibold text-cyan-800">ตลอดปี</p>
+                    <p class="text-sm text-slate-700 mt-1">จ้างเจ้าหน้าที่โครงการ 1 อัตรา เดือนละ 20,120 บาท</p>
+                </div>
+                <div class="rounded-xl border border-emerald-100 bg-emerald-50/70 p-4">
+                    <p class="text-xs font-heading font-semibold text-emerald-800">ธันวาคม 2569</p>
+                    <p class="text-sm text-slate-700 mt-1">จ้างพัฒนา HRDI One, ปรับระบบตาม พ.ร.บ. ไซเบอร์, MA ระบบเดิม และบำรุงรักษาเว็บแอปพลิเคชัน</p>
+                </div>
+                <div class="rounded-xl border border-amber-100 bg-amber-50/70 p-4">
+                    <p class="text-xs font-heading font-semibold text-amber-800">กุมภาพันธ์ 2570</p>
+                    <p class="text-sm text-slate-700 mt-1">จัดซื้อวัสดุคอมพิวเตอร์ 1 ครั้ง</p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full min-w-[1040px] text-xs border-collapse">
+                    <thead>
+                        <tr class="text-slate-500 font-heading">
+                            <th class="text-left py-2 pr-3 sticky left-0 bg-white z-10 min-w-[240px]">กิจกรรม</th>
+                            <th class="text-right py-2 px-2 whitespace-nowrap">งบประมาณ</th>
+                            <th class="text-center py-2 px-1 font-normal">ต.ค.<br><span class="text-[10px]">69</span></th>
+                            <th class="text-center py-2 px-1 font-normal">พ.ย.<br><span class="text-[10px]">69</span></th>
+                            <th class="text-center py-2 px-1 font-semibold text-emerald-700 bg-emerald-50 rounded-t-lg">ธ.ค.<br><span class="text-[10px]">69</span></th>
+                            <th class="text-center py-2 px-1 font-normal">ม.ค.<br><span class="text-[10px]">70</span></th>
+                            <th class="text-center py-2 px-1 font-semibold text-amber-700 bg-amber-50 rounded-t-lg">ก.พ.<br><span class="text-[10px]">70</span></th>
+                            <th class="text-center py-2 px-1 font-normal">มี.ค.<br><span class="text-[10px]">70</span></th>
+                            <th class="text-center py-2 px-1 font-normal">เม.ย.<br><span class="text-[10px]">70</span></th>
+                            <th class="text-center py-2 px-1 font-normal">พ.ค.<br><span class="text-[10px]">70</span></th>
+                            <th class="text-center py-2 px-1 font-normal">มิ.ย.<br><span class="text-[10px]">70</span></th>
+                            <th class="text-center py-2 px-1 font-normal">ก.ค.<br><span class="text-[10px]">70</span></th>
+                            <th class="text-center py-2 px-1 font-normal">ส.ค.<br><span class="text-[10px]">70</span></th>
+                            <th class="text-center py-2 px-1 font-normal">ก.ย.<br><span class="text-[10px]">70</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t border-slate-100">
+                            <td class="py-2 pr-3 sticky left-0 bg-white">
+                                <span class="font-heading font-semibold text-slate-800 block">3.1 เจ้าหน้าที่โครงการ</span>
+                                <span class="text-slate-500">1 อัตรา ดูแลการบริหารโครงการต่อเนื่อง</span>
+                            </td>
+                            <td class="text-right px-2 font-heading font-semibold text-slate-800 whitespace-nowrap">241,440</td>
+                            <td class="px-1"><div class="h-5 rounded-sm bg-cyan-500" title="20,120 บาท"></div></td>
+                            <td class="px-1"><div class="h-5 rounded-sm bg-cyan-500" title="20,120 บาท"></div></td>
+                            <td class="px-1 bg-emerald-50/60"><div class="h-5 rounded-sm bg-cyan-500" title="20,120 บาท"></div></td>
+                            <td class="px-1"><div class="h-5 rounded-sm bg-cyan-500" title="20,120 บาท"></div></td>
+                            <td class="px-1 bg-amber-50/60"><div class="h-5 rounded-sm bg-cyan-500" title="20,120 บาท"></div></td>
+                            <td class="px-1"><div class="h-5 rounded-sm bg-cyan-500" title="20,120 บาท"></div></td>
+                            <td class="px-1"><div class="h-5 rounded-sm bg-cyan-500" title="20,120 บาท"></div></td>
+                            <td class="px-1"><div class="h-5 rounded-sm bg-cyan-500" title="20,120 บาท"></div></td>
+                            <td class="px-1"><div class="h-5 rounded-sm bg-cyan-500" title="20,120 บาท"></div></td>
+                            <td class="px-1"><div class="h-5 rounded-sm bg-cyan-500" title="20,120 บาท"></div></td>
+                            <td class="px-1"><div class="h-5 rounded-sm bg-cyan-500" title="20,120 บาท"></div></td>
+                            <td class="px-1"><div class="h-5 rounded-sm bg-cyan-500" title="20,120 บาท"></div></td>
+                        </tr>
+                        <tr class="border-t border-slate-100">
+                            <td class="py-2 pr-3 sticky left-0 bg-white">
+                                <span class="font-heading font-semibold text-slate-800 block">1.1 ระบบ HRDI One</span>
+                                <span class="text-slate-500">จ้างพัฒนา 1 ระบบ</span>
+                            </td>
+                            <td class="text-right px-2 font-heading font-semibold text-slate-800 whitespace-nowrap">500,000</td>
+                            <td></td><td></td>
+                            <td class="px-1 bg-emerald-50/60"><div class="h-5 rounded-sm bg-emerald-500" title="500,000 บาท"></div></td>
+                            <td></td><td class="bg-amber-50/40"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr class="border-t border-slate-100">
+                            <td class="py-2 pr-3 sticky left-0 bg-white">
+                                <span class="font-heading font-semibold text-slate-800 block">1.2 มาตรฐาน พ.ร.บ. ไซเบอร์</span>
+                                <span class="text-slate-500">ปรับปรุง 2 ระบบ รวมอัปเกรด PHP 8.5.12</span>
+                            </td>
+                            <td class="text-right px-2 font-heading font-semibold text-slate-800 whitespace-nowrap">400,000</td>
+                            <td></td><td></td>
+                            <td class="px-1 bg-emerald-50/60"><div class="h-5 rounded-sm bg-blue-600" title="400,000 บาท"></div></td>
+                            <td></td><td class="bg-amber-50/40"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr class="border-t border-slate-100">
+                            <td class="py-2 pr-3 sticky left-0 bg-white">
+                                <span class="font-heading font-semibold text-slate-800 block">1.3 MA ระบบเดิม</span>
+                                <span class="text-slate-500">e-Document และ IDP 2 ระบบ</span>
+                            </td>
+                            <td class="text-right px-2 font-heading font-semibold text-slate-800 whitespace-nowrap">380,000</td>
+                            <td></td><td></td>
+                            <td class="px-1 bg-emerald-50/60"><div class="h-5 rounded-sm bg-amber-500" title="380,000 บาท"></div></td>
+                            <td></td><td class="bg-amber-50/40"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr class="border-t border-slate-100">
+                            <td class="py-2 pr-3 sticky left-0 bg-white">
+                                <span class="font-heading font-semibold text-slate-800 block">2.2 เว็บแอปพลิเคชัน</span>
+                                <span class="text-slate-500">บำรุงรักษา Stock Photos และ E-Ticket</span>
+                            </td>
+                            <td class="text-right px-2 font-heading font-semibold text-slate-800 whitespace-nowrap">200,000</td>
+                            <td></td><td></td>
+                            <td class="px-1 bg-emerald-50/60"><div class="h-5 rounded-sm bg-purple-600" title="200,000 บาท"></div></td>
+                            <td></td><td class="bg-amber-50/40"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr class="border-t border-slate-100">
+                            <td class="py-2 pr-3 sticky left-0 bg-white">
+                                <span class="font-heading font-semibold text-slate-800 block">3.2 วัสดุคอมพิวเตอร์</span>
+                                <span class="text-slate-500">จัดซื้อ 1 ครั้ง</span>
+                            </td>
+                            <td class="text-right px-2 font-heading font-semibold text-slate-800 whitespace-nowrap">49,760</td>
+                            <td></td><td></td><td class="bg-emerald-50/40"></td><td></td>
+                            <td class="px-1 bg-amber-50/60"><div class="h-5 rounded-sm bg-slate-500" title="49,760 บาท"></div></td>
+                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr class="border-t-2 border-slate-800 text-slate-900 font-heading font-bold">
+                            <td class="pt-3 pr-3 sticky left-0 bg-white">รวมใช้จ่ายรายเดือน</td>
+                            <td class="pt-3 px-2 text-right text-emerald-600 whitespace-nowrap">1,771,200</td>
+                            <td class="pt-3 text-center text-[11px] font-medium">20,120</td>
+                            <td class="pt-3 text-center text-[11px] font-medium">20,120</td>
+                            <td class="pt-3 text-center text-[11px] font-bold text-emerald-700 bg-emerald-50">1,500,120</td>
+                            <td class="pt-3 text-center text-[11px] font-medium">20,120</td>
+                            <td class="pt-3 text-center text-[11px] font-bold text-amber-700 bg-amber-50">69,880</td>
+                            <td class="pt-3 text-center text-[11px] font-medium">20,120</td>
+                            <td class="pt-3 text-center text-[11px] font-medium">20,120</td>
+                            <td class="pt-3 text-center text-[11px] font-medium">20,120</td>
+                            <td class="pt-3 text-center text-[11px] font-medium">20,120</td>
+                            <td class="pt-3 text-center text-[11px] font-medium">20,120</td>
+                            <td class="pt-3 text-center text-[11px] font-medium">20,120</td>
+                            <td class="pt-3 text-center text-[11px] font-medium">20,120</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-3">หน่วยเป็นบาท แถบสีคือเดือนที่มีการเบิกจ่ายตามแผนปฏิบัติการ</p>
+
+            <div class="mt-6 pt-5 border-t border-slate-100">
+                <h3 class="font-heading font-semibold text-slate-800 text-sm mb-3">กิจกรรมที่บรรจุในแผน แต่ยังไม่ตั้งงบประมาณปีนี้</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div class="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-4 py-3">
+                        <p class="font-heading font-semibold text-sm text-slate-800">1.4 ระบบเชื่อมโยงข้อมูลบุคลากรกลาง</p>
+                        <p class="text-xs text-slate-500 mt-0.5">เป้าหมาย 1 ระบบ</p>
+                    </div>
+                    <div class="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-4 py-3">
+                        <p class="font-heading font-semibold text-sm text-slate-800">1.5 ระบบสนับสนุนงานทรัพยากรมนุษย์ (ระบบลา)</p>
+                        <p class="text-xs text-slate-500 mt-0.5">เป้าหมาย 1 ระบบ</p>
+                    </div>
+                    <div class="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-4 py-3">
+                        <p class="font-heading font-semibold text-sm text-slate-800">1.6 ระบบควบคุมภายในและการบริหารความเสี่ยง</p>
+                        <p class="text-xs text-slate-500 mt-0.5">เป้าหมาย 1 ระบบ</p>
+                    </div>
+                    <div class="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-4 py-3">
+                        <p class="font-heading font-semibold text-sm text-slate-800">2.1 และ 2.3 วิเคราะห์และรายงานผลการใช้แอปพลิเคชัน</p>
+                        <p class="text-xs text-slate-500 mt-0.5">เป้าหมายอย่างละ 1 รายงาน ดำเนินงานคู่กับงานบำรุงรักษา 2 เว็บไซต์</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="project-chatbot" class="scroll-mt-6 space-y-6">
+            <div class="rounded-2xl bg-gradient-to-r from-violet-700 to-indigo-700 text-white px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <p class="text-xs font-heading text-violet-100">โครงการที่ 2 · งบดำเนินงาน</p>
+                    <h2 class="font-heading font-bold text-lg sm:text-xl mt-1">โครงการพัฒนา AI Chatbot เพื่อการถ่ายทอดองค์ความรู้และบริการข้อมูล</h2>
+                </div>
+                <div class="flex items-center gap-4 shrink-0">
+                    <div class="text-right">
+                        <p class="text-2xl font-extrabold font-heading leading-none">0.55</p>
+                        <p class="text-xs text-violet-100 mt-1">ล้านบาท</p>
+                    </div>
+                    <a href="#overview" class="text-xs bg-white/15 hover:bg-white/25 border border-white/20 rounded-full px-3 py-1.5">กลับไปภาพรวม</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                <h3 class="font-heading font-bold text-slate-900 flex items-center gap-2">
+                    <i class="fa-solid fa-bullseye text-violet-600"></i> ตัวชี้วัด
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="rounded-xl border border-violet-100 bg-violet-50/50 p-4">
+                        <p class="text-3xl font-extrabold text-violet-700 font-heading">85<span class="text-base font-normal text-slate-500">%</span></p>
+                        <p class="text-sm text-slate-700 mt-2">ความพึงพอใจของผู้ใช้บริการจากเครื่องมือ AI &amp; Data Integration และ APIs Services</p>
+                    </div>
+                    <div class="rounded-xl border border-indigo-100 bg-indigo-50/50 p-4">
+                        <p class="text-3xl font-extrabold text-indigo-700 font-heading">2 <span class="text-base font-normal text-slate-500">ครั้ง</span></p>
+                        <p class="text-sm text-slate-700 mt-2">อบรมเชิงปฏิบัติการใช้งาน Smart CRM และ AI Chatbot แก่เจ้าหน้าที่ที่เกี่ยวข้อง</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="bg-violet-700 text-white px-5 py-4 flex justify-between items-center gap-3">
+                        <h3 class="font-heading font-bold">1. ปรับปรุงฐานข้อมูลการให้บริการออนไลน์</h3>
+                        <span class="text-sm font-heading font-bold bg-white/20 rounded-full px-3 py-1 shrink-0">0.49 ล้านบาท</span>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                            <h4 class="font-heading font-semibold text-sm text-slate-800">1.1 จ้างปรับปรุงบำรุงรักษาฐานข้อมูลระบบให้บริการข้อมูลออนไลน์เว็บไซต์ และสิทธิ์ในการใช้บริการดิจิทัล</h4>
+                            <p class="text-xs text-slate-500 mt-1">เป้าหมาย 1 ระบบ · 490,000 บาท · เบิกจ่ายธันวาคม 2569</p>
+                            <ul class="mt-3 text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                                <li>ค่าสิทธิ์การเข้าใช้บริการข้อมูลออนไลน์ Google Maps API, Google Analytics, Heatmap และ E-book</li>
+                                <li>พัฒนาต่อยอดและเชื่อมโยง APIs กับ AI Chatbot</li>
+                            </ul>
+                        </div>
+                        <div class="rounded-xl border border-dashed border-slate-200 px-4 py-3">
+                            <h4 class="font-heading font-semibold text-sm text-slate-800">1.2 รายงานผลการวิเคราะห์จากการปรับปรุงฐานข้อมูลการให้บริการออนไลน์</h4>
+                            <p class="text-xs text-slate-500 mt-1">เป้าหมาย 1 รายงาน · ยังไม่ตั้งงบประมาณรายการ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <div class="bg-indigo-700 text-white px-5 py-4 flex justify-between items-center gap-3">
+                        <h3 class="font-heading font-bold">2. จัดกิจกรรมถ่ายทอดความรู้</h3>
+                        <span class="text-sm font-heading font-bold bg-white/20 rounded-full px-3 py-1 shrink-0">0.06 ล้านบาท</span>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <div class="rounded-xl border border-slate-100 bg-slate-50 p-4">
+                            <h4 class="font-heading font-semibold text-sm text-slate-800">2.1 จัดอบรมให้ความรู้เจ้าหน้าที่ในการใช้งานระบบ</h4>
+                            <p class="text-xs text-slate-500 mt-1">เป้าหมาย 2 ครั้ง · 60,000 บาท · เบิกจ่ายมิถุนายน 2570</p>
+                            <ul class="mt-3 text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                                <li>จัดอบรมเจ้าหน้าที่ 2 ครั้ง</li>
+                                <li>การใช้ AI Chatbot และสิ่งที่อัปเดตในเว็บไซต์ใหม่</li>
+                            </ul>
+                        </div>
+                        <div class="rounded-xl border border-dashed border-slate-200 px-4 py-3">
+                            <h4 class="font-heading font-semibold text-sm text-slate-800">2.2 จัดทำคู่มือการใช้งานระบบ</h4>
+                            <p class="text-xs text-slate-500 mt-1">เป้าหมาย 1 ฉบับ · ยังไม่ตั้งงบประมาณรายการ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                <h3 class="font-heading font-bold text-slate-900 flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-calendar-check text-violet-600"></i> แผนการใช้จ่าย ปีงบประมาณ 2570
+                </h3>
+                <p class="text-xs text-slate-500 mb-4">ตามแผนการปฏิบัติการประจำปี 2570 สำนักยุทธศาสตร์และแผน รวม 550,000 บาท</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[880px] text-xs border-collapse">
+                        <thead>
+                            <tr class="text-slate-500 font-heading">
+                                <th class="text-left py-2 pr-3">กิจกรรม</th>
+                                <th class="text-right py-2 px-2">งบประมาณ</th>
+                                <th class="text-center font-normal px-1">ต.ค.<br><span class="text-[10px]">69</span></th>
+                                <th class="text-center font-normal px-1">พ.ย.<br><span class="text-[10px]">69</span></th>
+                                <th class="text-center font-semibold text-violet-700 bg-violet-50 px-1">ธ.ค.<br><span class="text-[10px]">69</span></th>
+                                <th class="text-center font-normal px-1">ม.ค.<br><span class="text-[10px]">70</span></th>
+                                <th class="text-center font-normal px-1">ก.พ.<br><span class="text-[10px]">70</span></th>
+                                <th class="text-center font-normal px-1">มี.ค.<br><span class="text-[10px]">70</span></th>
+                                <th class="text-center font-normal px-1">เม.ย.<br><span class="text-[10px]">70</span></th>
+                                <th class="text-center font-normal px-1">พ.ค.<br><span class="text-[10px]">70</span></th>
+                                <th class="text-center font-semibold text-indigo-700 bg-indigo-50 px-1">มิ.ย.<br><span class="text-[10px]">70</span></th>
+                                <th class="text-center font-normal px-1">ก.ค.<br><span class="text-[10px]">70</span></th>
+                                <th class="text-center font-normal px-1">ส.ค.<br><span class="text-[10px]">70</span></th>
+                                <th class="text-center font-normal px-1">ก.ย.<br><span class="text-[10px]">70</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t border-slate-100">
+                                <td class="py-2 pr-3 font-heading font-semibold text-slate-800">1.1 ฐานข้อมูลและสิทธิ์บริการดิจิทัล</td>
+                                <td class="py-2 px-2 text-right font-heading">490,000</td>
+                                <td></td><td></td>
+                                <td class="px-1 bg-violet-50/70"><div class="h-5 rounded-sm bg-violet-600" title="490,000 บาท"></div></td>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr class="border-t border-slate-100">
+                                <td class="py-2 pr-3 font-heading font-semibold text-slate-800">2.1 อบรมเจ้าหน้าที่</td>
+                                <td class="py-2 px-2 text-right font-heading">60,000</td>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                <td class="px-1 bg-indigo-50/70"><div class="h-5 rounded-sm bg-indigo-600" title="60,000 บาท"></div></td>
+                                <td></td><td></td><td></td>
+                            </tr>
+                            <tr class="border-t-2 border-slate-800 font-heading font-bold">
+                                <td class="pt-3">รวมใช้จ่ายรายเดือน</td>
+                                <td class="pt-3 px-2 text-right text-violet-700">550,000</td>
+                                <td class="pt-3 text-center text-slate-300">-</td>
+                                <td class="pt-3 text-center text-slate-300">-</td>
+                                <td class="pt-3 text-center text-violet-700 bg-violet-50">490,000</td>
+                                <td class="pt-3 text-center text-slate-300">-</td>
+                                <td class="pt-3 text-center text-slate-300">-</td>
+                                <td class="pt-3 text-center text-slate-300">-</td>
+                                <td class="pt-3 text-center text-slate-300">-</td>
+                                <td class="pt-3 text-center text-slate-300">-</td>
+                                <td class="pt-3 text-center text-indigo-700 bg-indigo-50">60,000</td>
+                                <td class="pt-3 text-center text-slate-300">-</td>
+                                <td class="pt-3 text-center text-slate-300">-</td>
+                                <td class="pt-3 text-center text-slate-300">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="project-capital" class="scroll-mt-6 space-y-6">
+            <div class="rounded-2xl bg-gradient-to-r from-amber-600 to-orange-700 text-white px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <p class="text-xs font-heading text-amber-100">โครงการที่ 3 · งบลงทุน</p>
+                    <h2 class="font-heading font-bold text-lg sm:text-xl mt-1">โครงการครุภัณฑ์สนับสนุนการพัฒนาเทคโนโลยีดิจิทัลเพื่อขับเคลื่อนการพัฒนาพื้นที่สูง</h2>
+                </div>
+                <div class="flex items-center gap-4 shrink-0">
+                    <div class="text-right">
+                        <p class="text-2xl font-extrabold font-heading leading-none">0.43</p>
+                        <p class="text-xs text-amber-100 mt-1">ล้านบาท</p>
+                    </div>
+                    <a href="#overview" class="text-xs bg-white/15 hover:bg-white/25 border border-white/20 rounded-full px-3 py-1.5">กลับไปภาพรวม</a>
+                </div>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4 text-sm text-amber-950 flex items-start gap-3">
+                <i class="fa-solid fa-link text-amber-600 mt-0.5"></i>
+                <p>กิจกรรม 3.2 พัฒนาต่อยอดการเชื่อมโยง APIs กับ AI Chatbot จาก <a href="#project-chatbot" class="font-semibold underline decoration-amber-400 underline-offset-2">กิจกรรม 1.1 ของโครงการ AI Chatbot</a> และเพิ่ม MFA ผู้ร้องเรียนด้วย ThaiD</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="px-6 py-4 border-b border-slate-100">
+                    <h3 class="font-heading font-bold text-slate-900">3. ครุภัณฑ์การพัฒนา AI Chatbot เพื่อการถ่ายทอดองค์ความรู้และบริการข้อมูล</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-6">
+                    <div class="rounded-xl border border-dashed border-slate-200 bg-slate-50 p-4">
+                        <p class="text-xs font-heading text-slate-500">3.1</p>
+                        <h4 class="font-heading font-semibold text-slate-800 mt-1">ทบทวน วิเคราะห์ และปรับปรุงสถาปัตยกรรมระบบ</h4>
+                        <p class="text-2xl font-extrabold text-slate-700 font-heading mt-3">1 <span class="text-sm font-normal text-slate-500">รายงาน</span></p>
+                    </div>
+                    <div class="rounded-xl border border-amber-100 bg-amber-50/40 p-4">
+                        <div class="flex items-start justify-between gap-3">
+                            <p class="text-xs font-heading text-amber-700">3.2</p>
+                            <span class="text-xs font-heading font-bold text-amber-800 bg-amber-100 rounded-full px-2.5 py-1">0.43 ล้านบาท</span>
+                        </div>
+                        <h4 class="font-heading font-semibold text-slate-800 mt-1">พัฒนา API, Data Connector, AI-Integrated และ MFA รองรับระบบเรื่องร้องเรียน</h4>
+                        <p class="text-2xl font-extrabold text-amber-700 font-heading mt-3">1 <span class="text-sm font-normal text-slate-500">ระบบ</span></p>
+                        <ul class="mt-3 text-sm text-slate-600 space-y-1.5 list-disc list-inside">
+                            <li>พัฒนาต่อยอดและเชื่อมโยง APIs กับ AI Chatbot</li>
+                            <li>MFA ผู้ร้องเรียนด้วย ThaiD</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 text-center text-xs text-slate-400">
+        <p>© แผนงานดิจิทัลองค์กร ปีงบประมาณ 2570 - สถาบันวิจัยและพัฒนาพื้นที่สูง (องค์การมหาชน)</p>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('budgetChart').getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        '1. HRDI One (0.50 ลบ.)',
+                        '2. พ.ร.บ. ไซเบอร์ (0.40 ลบ.)',
+                        '3. แอปพลิเคชัน (0.20 ลบ.)',
+                        '4. MA ระบบเดิม (0.38 ลบ.)',
+                        '5. วัสดุคอมพิวเตอร์ (0.05 ลบ.)',
+                        '6. เจ้าหน้าที่โครงการ (0.2412 ลบ.)'
+                    ],
+                    datasets: [{
+                        data: [0.50, 0.40, 0.20, 0.38, 0.05, 0.2412],
+                        backgroundColor: [
+                            '#10b981', // Emerald
+                            '#3b82f6', // Blue
+                            '#a855f7', // Purple
+                            '#f59e0b', // Amber
+                            '#64748b', // Slate
+                            '#06b6d4'  // Cyan
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    family: 'Sarabun',
+                                    size: 11
+                                },
+                                boxWidth: 12,
+                                padding: 10
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ' ' + context.label + ': ' + context.parsed + ' ล้านบาท';
+                                }
+                            }
+                        }
+                    },
+                    cutout: '65%'
+                }
+            });
+        });
+    </script>
+</body>
+</html>
